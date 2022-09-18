@@ -15,7 +15,7 @@ while True:
         print("\nBye.\n")
         break
 
-    elif url.startswith('https://www.youtube.com/playlist?list=PL'):
+    if url.startswith('https://www.youtube.com/playlist?list=PL'):
         plist = Playlist(url)
 
         try:
