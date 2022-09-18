@@ -4,20 +4,23 @@ import os
 print("Welcome to application\ntype 'q' to exit\n")
 
 while True:
-    name = input("Filename: ")
+
+    name = input("Name: ")
     if name == 'q':
-        print("Bye!\n")
+        print("\nBye.\n")
         break
 
     url = input("Url: ")
-    if url.startswith('https://www.youtube.com/playlist?list=PL'):
+    if url == 'q':
+        print("\nBye.\n")
+        break
+
+    elif url.startswith('https://www.youtube.com/playlist?list=PL'):
         plist = Playlist(url)
-        
+
         try:
-            f = open(f"{name}.txt", "x")    
-            
-            for i in plist:
-                f.write(f'{i}\n')
+            with open(f"{name}.txt", "x") as f:
+                [f.write(f'{i}\n') for i in plist]
 
             print(f'\nFILE CREATED IN: "{os.getcwd()}"\n')
 
