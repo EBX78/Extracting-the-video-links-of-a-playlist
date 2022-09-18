@@ -1,2 +1,2 @@
 # utube_playlisy
-get all video url from playlist url
+get all video urls from playlist url
